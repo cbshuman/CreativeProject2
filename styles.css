@@ -1,0 +1,69 @@
+body
+	{
+	background-image:url("/images/backgrounds.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	color: #eeeeee;
+	}
+
+h1
+	{
+	text-align: center;
+	}
+
+h4
+	{
+	text-align: center;
+	font-variant: small-caps;
+	font-size: 1.25em;
+	margin:3px;
+	}
+
+.cardInfo
+	{
+	text-align: center;
+	background-color:#666;
+	max-width:230px;
+	margin:1%;
+	padding:.25%;
+	border-width: 5px;
+	border-radius: 15px;
+	border-bottom: .5em solid #333;
+	}
+
+.cardInfo img
+	{
+	max-width:223px;
+	max-height:310px;
+	border-radius:15px;
+	}
+
+.cardInfo a
+	{
+	color: #eeeeee;
+	}
+
+.cardInfo a:hover
+	{
+	color: #fff;
+	}
+
+.content
+	{
+	background-color:#444;
+	margin-left:2em;
+	margin-right:2em;
+	padding:1em;
+	border-radius:15px;
+	}
+
+.searchResults
+	{
+	display: grid;
+	grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) );
+	}
+
+.searchResults div:hover
+	{
+	background-color:#e55;
+	}
