@@ -68,6 +68,7 @@ h4
 .deckHeader
 	{
 	display: grid;
+	word-wrap: break-word;
 	grid-template-columns: repeat( auto-fit, minmax(250px, .25fr) );
 	}
 
