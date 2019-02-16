@@ -1,5 +1,9 @@
-let cardCount = 0;
 let creatures = 0;
+let instants = 0;
+let enchantments = 0
+let artifacts = 0;
+let planeswalkers = 0;
+let lands = 0;
 let deck = [];
 
 let UpdateCardCount = function(cardType, isAdding)
@@ -15,22 +19,36 @@ let UpdateCardCount = function(cardType, isAdding)
 		count = -1;
 		}
 
-	console.log("Type: " + cardType);
-	switch(cardType)
+	console.log(cardType);
+
+	switch(cardType[0])
 		{
 		case "Creature":
 			creatures += count;
 			break;
 		case "Instant":
-			console.log("This is an instant");
+			instants += count;
+			break;
+		case "Sorcery":
+			instants += count;
+			break;
+		case "Enchantment":
+			enchantments +=  count;
+			break;
+		case "Artifact":
+			artifacts +=  count;
+			break;
+		case "Planeswalker":
+			planeswalkers +=  count;
+			break;
+		case "Land":
+			lands +=  count;
 			break;
 		default:
 			break;
 		}
 
-	console.log("Card count: " + count + "/" + cardCount);
-
-	cardCount += count;
+	//console.log("Card count: " + count + "/" + cardCount);
 	UpdateCardDisplay();
 	}
 
@@ -65,7 +83,25 @@ let RemoveCard = function(cardId)
 	element.parentNode.removeChild(element);
 
 	let card;	
+	let cleanDeck = [];
+	let foundCard = false;
 
+	for(let i = 0; i < deck.length; i++)
+		{
+		console.log(cardId + "/" + deck[i].id + "/" + foundCard);
+		if(deck[i].id === cardId && foundCard === false)
+			{
+			foundCard = true;
+			card = deck[i];
+			}
+		else
+			{
+			cleanDeck.push(deck[i]);
+			}
+		}
+
+	deck = cleanDeck;
+	/*
 	deck.forEach(function(currentCard)
 		{
 		console.log(currentCard.name);
@@ -74,17 +110,22 @@ let RemoveCard = function(cardId)
 			card = currentCard;
 			return;
 			}
-		});+
+		});*/
 
-	console.log(card);
+	console.log(card + "/" + deck.length + "/" + cleanDeck.length + "/" + cardId);
 
 	UpdateCardCount(card.types,false);
 	}
 
 let UpdateCardDisplay = function()
 	{
-	document.getElementById("count").innerHTML = "Card Count: " + cardCount;
-	document.getElementById("creatures").innerHTML = "Creatures: " + cardCount;
+	document.getElementById("count").innerHTML = "Card Count: " +  deck.length;
+	document.getElementById("creatures").innerHTML = "Creatures: " + creatures;
+	document.getElementById("instants").innerHTML = "Instants/Soceries: " + instants;
+	document.getElementById("enchantments").innerHTML = "Enchantments: " + enchantments;
+	document.getElementById("artifacts").innerHTML = "Artifacts: " + artifacts;
+	document.getElementById("planeswalkers").innerHTML = "Planeswalkers: " + planeswalkers;
+	document.getElementById("lands").innerHTML = "Lands: " + lands;
 	}
 
 let SetSearchResults = function(json)

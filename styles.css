@@ -2,7 +2,7 @@ body
 	{
 	background-image:url("/images/backgrounds.jpg");
 	background-repeat: no-repeat;
-	background-size: cover;
+	background-attachment: fixed;
 	color: #eeeeee;
 	}
 
@@ -48,13 +48,43 @@ h4
 	color: #fff;
 	}
 
+.fullcontent
+	{
+	margin-top:5vh;
+	margin-bottom:5vh;
+	min-height: 80vh;
+	padding: 20px;
+	border-radius:25px;
+	}
+
 .content
 	{
 	background-color:#444;
-	margin-left:2em;
-	margin-right:2em;
+	margin-bottom:4em;
 	padding:1em;
 	border-radius:15px;
+	}
+
+.deckHeader
+	{
+	display: grid;
+	grid-template-columns: repeat( auto-fit, minmax(250px, .25fr) );
+	}
+
+.footer
+	{
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	text-align: center;
+	padding:.5em;
+	background-color:#444;
+	}
+
+.footer img
+	{
+	height:1.25em;
 	}
 
 .searchResults

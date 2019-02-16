@@ -6,11 +6,28 @@
 </head>
 <body>
 	<h1>Magic Deck Builder</h1>
+
+	<div class ="fullcontent">
 	<div class = "content">
-		<h2>Deck</h2>
-		<p id='count'>Card Count: 0</p>
-		<p id='creatures'>Creatures: 0</p>
+	<h2>Deck</h2>
+		<hr>
+		<div class="deckHeader">
+			<div id='count'>Card Count: 0</div>
+			<div id='creatures'>Creatures: 0</div>
+			<div id='instants'>Instants/Sorceries: 0</div>
+			<div id='enchantments'>Enchantments: 0</div>
+			<div id='artifacts'>Artifacts: 0</div>
+			<div id='planeswalkers'>Planeswalkers: 0</div>
+			<div id='lands'>Lands: 0</div>
+		</div>
+		<hr>
 		<div id ="deck" class = "searchResults"></div>
+	</div>
+
+	<br>
+
+	<div class = "content">
+		<h2>Search</h2>
 		<hr>
 		<form>
 		  <label>Search for a Card</label>
@@ -21,6 +38,9 @@
 
 		<div id="cardData" class = "searchResults"></div>
 	</div>
+	</div>
+
+	<div class="footer"><a href = "https://github.com/cbshuman/CreativeProject2"><img src = "images/git.png"></a></div>
 
     <script text="type/javascript" src="/script.js"></script>
 </body>
